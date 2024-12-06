@@ -1,0 +1,60 @@
+.about {
+    margin-top: 50px;
+
+    background-color: hsl(0, 0%, 10%);
+
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    height: auto;
+
+    box-sizing: border-box;
+
+    border-radius: 1rem;
+    border: 1px solid hsla(0, 0%, 20%);
+
+    padding: 2rem;
+
+    margin-bottom: 100px;
+}
+
+.description {
+    width: 100%;
+    padding: 2rem;
+
+    width: 100%;
+}
+
+.description ul {
+    margin-left: 20px;
+}
+
+.description ul li {
+    font-size: 1rem;
+    color: hsl(0, 0%, 75%);
+    padding: 0.25rem;
+}
+
+
+.description h1 {
+    font-size: 2rem;
+    color: hsl(0, 0%, 100%);
+}
+
+.photo {
+    background-color: hsl(0, 0%, 20%);
+    
+    max-width: 250px;
+    width: 100%;
+    aspect-ratio: 1;
+
+    border-radius: 50%;
+}
+
+@media (max-aspect-ratio: 1.375) {
+    .about {
+        flex-direction: column;
+    }
+}
