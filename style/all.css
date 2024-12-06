@@ -27,18 +27,17 @@
 }
 
 .between {
-    align-items: start;
+    align-items: center;
     justify-content: space-between;
     display: flex;
 }
-
 
 a {
     transition: 0.2s;
 
     padding: 0.5rem;
     text-decoration: none;
-    
+
     color: hsl(0, 0%, 100%);
 }
 
