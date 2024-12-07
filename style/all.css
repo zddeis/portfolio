@@ -14,12 +14,6 @@
     clear: both;
 }
 
-@media screen and (max-width: 750px) {
-    .column {
-        width: 100%;
-    }
-}
-
 .center {
     align-items: center;
     justify-content: center;
