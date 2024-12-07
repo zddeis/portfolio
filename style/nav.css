@@ -3,6 +3,7 @@ nav {
 
     position: fixed;
     display: flex;
+    justify-content: center;
 
     background-color: hsla(0, 0%, 10%, 0.5);
     backdrop-filter: blur(5px);
@@ -17,6 +18,12 @@ nav {
     margin-left: 50%;
 
     z-index: 100;
+}
+
+nav a {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 nav a:hover {
