@@ -1,12 +1,12 @@
 .work {
-    margin-top: 50px;
+    margin-top: 1.5rem;
 
     display: flex;
     flex-wrap: wrap;
 
     gap: 50px;
     
-    margin-bottom: 100px;
+    margin-bottom: 7.5rem;
 }
 
 /* CARD */
@@ -46,6 +46,7 @@
 }
 
 .card .buttons {
+
     padding: 1rem 2rem;
     height: 3rem;
 
