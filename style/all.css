@@ -1,6 +1,17 @@
+.dark {
+    --color-primary: hsl(240, 50%, 10%);
+    --color-secondary: hsl(240, 50%, 90%);
+    --color-tertiary: hsl(300, 80%, 80%);
+    --color-accent: hsl(180, 80%, 80%);
+
+    --color-100: hsl(0,0%, 100%);
+}
+
 * {
     margin: 0;
     padding: 0;
+    
+    transition: 0.3s ease;
 }
 
 .column {

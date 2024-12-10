@@ -13,12 +13,16 @@
     <link rel="stylesheet" href="style/main.css">
 
     <link rel="stylesheet" href="style/about.css">
+    <link rel="stylesheet" href="style/skills.css">
     <link rel="stylesheet" href="style/work.css">
     <link rel="stylesheet" href="style/contact.css">
-
 </head>
 
-<body>
+<style>
+
+</style>
+
+<body onmousemove="move_cursor(event)">
     <nav>
         <a href="#about">About Me</a>
         <a href="#work">My Work</a>
@@ -26,6 +30,7 @@
     </nav>
 
     <main>
+
         <section class="about center" name="about">
             <img src="Transparent.png" alt="" class="photo">
 
@@ -34,7 +39,8 @@
                 <div class="title between">
                     <h2>Lorem ipsum</h2>
 
-                    <a href="https://g.co/kgs/EAiar1h" target="_blank" rel="noopener noreferrer" class="location center">
+                    <a href="https://g.co/kgs/EAiar1h" target="_blank" rel="noopener noreferrer"
+                        class="location center">
                         Coimbra, Portugal
                         <img src="img/Pin.png" alt="Location">
                     </a>
@@ -49,6 +55,41 @@
                     <li>Lectus vitae lacinia justo facilisi faucibus.</li>
                     <li>Ex volutpat litora primis nisi eros nisl.</li>
                 </ul>
+            </div>
+        </section>
+
+        <h1>Skills</h1>
+
+        <section class="skills center" name="skills">
+
+            <div>
+                <img src="img/skills/csharp-original.svg" alt="C#">
+                <span class="tooltip">C#</span>
+            </div>
+
+            <div>
+                <img src="img/skills/css3-original.svg" alt="CSS">
+                <span class="tooltip">CSS</span>
+            </div>
+            <div>
+                <img src="img/skills/html5-original.svg" alt="HTML">
+                <span class="tooltip">HTML</span>
+            </div>
+            <div>
+                <img src="img/skills/php-original.svg" alt="PHP">
+                <span class="tooltip">PHP</span>
+            </div>
+            <div>
+                <img src="img/skills/lua-original.svg" alt="LUA">
+                <span class="tooltip">LUA</span>
+            </div>
+            <div>
+                <img src="img/skills/mysql-original.svg" alt="MYSQL">
+                <span class="tooltip">MYSQL</span>
+            </div>
+            <div>
+                <img src="img/skills/Roblox_Studio_2022_icon.svg" alt="ROBLOX STUDIO">
+                <span class="tooltip">ROBLOX STUDIO</span>
             </div>
         </section>
 
@@ -80,21 +121,129 @@
                 </div>
             </div>
 
+            <div class="card between">
+                <div style="width: 100%;">
+                    <img src="Transparent.png" alt="">
+
+                    <div class="card-description">
+                        <h2>Project Name</h2>
+                        <br>
+                        <p>Description</p>
+                    </div>
+                </div>
+
+                <div class="buttons center">
+                    <a href="" class="center">
+                        Link 1
+                        <img src="img/LinkArrow.png" alt="" class="arrow">
+                    </a>
+
+                    <a href="" class="center">
+                        Link 2
+                        <img src="img/LinkArrow.png" alt="" class="arrow">
+                    </a>
+                </div>
+            </div>
+
+            <div class="card between">
+                <div style="width: 100%;">
+                    <img src="Transparent.png" alt="">
+
+                    <div class="card-description">
+                        <h2>Project Name</h2>
+                        <br>
+                        <p>Description</p>
+                    </div>
+                </div>
+
+                <div class="buttons center">
+                    <a href="" class="center">
+                        Link 1
+                        <img src="img/LinkArrow.png" alt="" class="arrow">
+                    </a>
+
+                    <a href="" class="center">
+                        Link 2
+                        <img src="img/LinkArrow.png" alt="" class="arrow">
+                    </a>
+                </div>
+            </div>
+
+            <div class="card between">
+                <div style="width: 100%;">
+                    <img src="Transparent.png" alt="">
+
+                    <div class="card-description">
+                        <h2>Project Name</h2>
+                        <br>
+                        <p>Description</p>
+                    </div>
+                </div>
+
+                <div class="buttons center">
+                    <a href="" class="center">
+                        Link 1
+                        <img src="img/LinkArrow.png" alt="" class="arrow">
+                    </a>
+
+                    <a href="" class="center">
+                        Link 2
+                        <img src="img/LinkArrow.png" alt="" class="arrow">
+                    </a>
+                </div>
+            </div>
+
         </section>
 
         <h1>Contact</h1>
 
         <section class="contact center" name="contact">
-            
-            <img src="img/discord.png" alt="discord">
-            <a href="https://discordapp.com/users/508625557437677580" target="_blank" rel="noopener noreferrer">zddeis</a>
+
+            <a class="a-discord center" href="https://discordapp.com/users/508625557437677580" target="_blank"
+                rel="noopener noreferrer">
+
+                <img src="img/discord.png" alt="discord" class="discord">
+                zddeis
+            </a>
 
             <div style="width: 5rem;"></div>
 
-            <img src="img/email.png" alt="email">
-            <a href="mailto:david.fcg07@gmail.com" target="_blank" rel="noopener noreferrer">david.fcg07@gmail.com</a>
+            <a class="a-email center" href="mailto:david.fcg07@gmail.com" target="_blank" rel="noopener noreferrer">
+
+                <img src="img/email.png" alt="email" class="email">
+                david.fcg07@gmail.com
+            </a>
         </section>
+
     </main>
 </body>
 
 </html>
+
+<!--
+
+<div class="card between">
+    <div style="width: 100%;">
+        <img src="Transparent.png" alt="">
+
+        <div class="card-description">
+            <h2>Project Name</h2>
+            <br>
+            <p>Description</p>
+        </div>
+    </div>
+
+    <div class="buttons center">
+        <a href="" class="center">
+            Link 1
+            <img src="img/LinkArrow.png" alt="" class="arrow">
+        </a>
+
+        <a href="" class="center">
+            Link 2
+            <img src="img/LinkArrow.png" alt="" class="arrow">
+        </a>
+    </div>
+</div>
+
+-->

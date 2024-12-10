@@ -11,7 +11,12 @@
 }
 
 .contact img {
+    transition: 0.2s ease;
+
     height: 2.5rem;
+    padding: 0.5rem;
+
+    filter: brightness(0) invert(1);
     opacity: 0.5;
 }
 
@@ -27,4 +32,10 @@
 
 .contact a:hover {
     text-decoration-color: hsl(0, 0%, 90%);
+}
+
+.a-email:hover .email,
+.a-discord:hover .discord {
+    filter: unset;
+    opacity: 1;
 }

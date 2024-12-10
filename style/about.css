@@ -40,15 +40,18 @@
 
 .location {
     color: hsl(0, 0%, 70%);
+    transition: 0.2s ease;
 
     font-size: 1rem;
     font-weight: lighter;
 
     cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: transparent;
 }
 
 .location:hover {
-    text-decoration: underline;
+    text-decoration-color: hsl(0, 0%, 70%);
 }
 
 .location img {
