@@ -16,8 +16,8 @@
     <link rel="stylesheet" href="style/skills.css">
     <link rel="stylesheet" href="style/work.css">
     <link rel="stylesheet" href="style/contact.css">
-
-    <script src="script.js"></script>
+    
+    <script src="scripts/GetYears.js"></script>
 </head>
 
 <body>
@@ -27,15 +27,16 @@
     </video>
 
     <nav>
-        <a href="#about">About Me</a>
+        <a href="">About Me</a>
         <a href="#work">My Work</a>
         <a href="#contact">Contact</a>
     </nav>
 
     <main>
 
-        <section class="about center" name="about">
-            <img src="img/Portrait.png" alt="" class="photo">
+        <section class="about center" id="about">
+            
+            <img src="img/Portrait.png" alt="" class="photo" id="photo">
 
             <div class="description">
 
@@ -70,7 +71,7 @@
 
         <h1>Skills</h1>
 
-        <section class="skills center" name="skills">
+        <section class="skills center" id="skills">
 
             <div>
                 <img src="img/skills/html5-original.svg" alt="HTML">
@@ -108,11 +109,12 @@
 
         <h1>My Work</h1>
 
-        <section class="work center" name="work">
+        <section class="work center" id="work">
 
             <div class="card between">
                 <div style="width: 100%;">
-                    <img class="img-preview" style="background-image: url('../img/work/Portfolio.png')" src="Transparent.png" alt="">
+                    <img class="img-preview" style="background-image: url('img/work/Portfolio.png')"
+                        src="Transparent.png" alt="">
 
                     <div class="card-description">
                         <h2>Portfolio</h2>
@@ -122,7 +124,8 @@
                 </div>
 
                 <div class="buttons center">
-                    <a href="https://github.com/zddeis/portfolio" target="_blank" rel="noopener noreferrer" class="center">
+                    <a href="https://github.com/zddeis/portfolio" target="_blank" rel="noopener noreferrer"
+                        class="center">
                         Github
                         <img src="img/LinkArrow.png" alt="" class="arrow">
                     </a>
@@ -132,7 +135,8 @@
 
             <div class="card between">
                 <div style="width: 100%;">
-                    <img class="img-preview" style="background-image: url('../img/work/zdsharp.png')" src="Transparent.png" alt="">
+                    <img class="img-preview" style="background-image: url('img/work/zdsharp.png')" src="Transparent.png"
+                        alt="">
 
                     <div class="card-description">
                         <h2>ZD#</h2>
@@ -142,7 +146,8 @@
                 </div>
 
                 <div class="buttons center">
-                    <a href="https://github.com/zddeis/zdSharp" target="_blank" rel="noopener noreferrer" class="center">
+                    <a href="https://github.com/zddeis/zdSharp" target="_blank" rel="noopener noreferrer"
+                        class="center">
                         Github
                         <img src="img/LinkArrow.png" alt="" class="arrow">
                     </a>
@@ -152,7 +157,7 @@
 
         <h1>Contact</h1>
 
-        <section class="contact center" name="contact">
+        <section class="contact center" id="contact">
 
             <a class="a-discord center" href="https://discordapp.com/users/508625557437677580" target="_blank"
                 rel="noopener noreferrer">

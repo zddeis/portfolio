@@ -12,7 +12,12 @@
 }
 
 .skills img {
+    scale: 0.9;
     height: 5rem;
+}
+
+.skills img:hover {
+    scale: 1;
 }
 
 .skills div {

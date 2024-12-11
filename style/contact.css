@@ -32,10 +32,18 @@
 
 .contact a:hover {
     text-decoration-color: hsl(0, 0%, 90%);
+    scale: 1.1;
 }
 
 .a-email:hover .email,
 .a-discord:hover .discord {
     filter: unset;
     opacity: 1;
+}
+
+
+@media (max-aspect-ratio: 1.375) {
+    .contact {
+        flex-direction: column;
+    }
 }
