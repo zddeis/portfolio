@@ -21,13 +21,14 @@
 
     flex-direction: column;
 
-    background-color: hsl(0, 0%, 10%);
+    background-color: hsl(0, 0%, 20%, 50%);
 }
 
 /* IMAGE */
 
-.card img {
-    background-color: hsl(0, 0%, 20%);
+.card .img-preview {
+    background-color: hsl(0, 0%, 5%);
+    background-size: 100% auto;
     height: 150px;
     width: 100%;
 

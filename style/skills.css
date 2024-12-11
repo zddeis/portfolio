@@ -2,7 +2,11 @@
     margin-top: 50px;
 
     width: 100%;
-    justify-content: space-evenly;
+    justify-content: space-between;
+
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
 
     margin-bottom: 50px;
 }
@@ -18,10 +22,11 @@
 }
 
 .skills div {
-    transition: 0.3s ease;
-
     position: relative;
     display: inline-block;
+
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
 .tooltip {
