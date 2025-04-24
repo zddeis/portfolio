@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="css/contact.css">
 
     <script src="js/GetYears.js"></script>
+    <script src="js/Carousel.js"></script>
 </head>
 
 <body>
@@ -71,40 +72,57 @@
 
         <h1>Skills</h1>
 
-        <section class="skills center" id="skills">
-
-            <div>
-                <img src="img/skills/html5-original.svg" alt="HTML">
-                <span class="tooltip">HTML</span>
+        <section class="skills" id="skills">
+            <button class="carousel-button" id="prevButton">&lt;</button>
+            <div class="skills-container">
+                <div class="skills-wrapper">
+                    <div class="skills-item">
+                        <img src="img/skills/html5-original.svg" alt="HTML">
+                        <span class="tooltip">HTML</span>
+                    </div>
+                    <div class="skills-item">
+                        <img src="img/skills/css3-original.svg" alt="CSS">
+                        <span class="tooltip">CSS</span>
+                    </div>
+                    <div class="skills-item">
+                        <img src="img/skills/javascript-original.svg" alt="JAVASCRIPT">
+                        <span class="tooltip">JAVASCRIPT</span>
+                    </div>
+                    <div class="skills-item">
+                        <img src="img/skills/php-original.svg" alt="PHP">
+                        <span class="tooltip">PHP</span>
+                    </div>
+                    <div class="skills-item">
+                        <img src="img/skills/mysql-original.svg" alt="MYSQL">
+                        <span class="tooltip">MYSQL</span>
+                    </div>
+                    <div class="skills-item">
+                        <img src="img/skills/Laravel.svg" alt="MYSQL">
+                        <span class="tooltip">LARAVEL</span>
+                    </div>
+                    <div class="skills-item">
+                        <img src="img/skills/Livewire.svg" alt="MYSQL">
+                        <span class="tooltip">LIVEWIRE</span>
+                    </div>
+                    <div class="skills-item">
+                        <img src="img/skills/csharp-original.svg" alt="C#">
+                        <span class="tooltip">C#</span>
+                    </div>
+                    <div class="skills-item">
+                        <img src="img/skills/lua-original.svg" alt="LUA">
+                        <span class="tooltip">LUA</span>
+                    </div>
+                    <div class="skills-item">
+                        <img src="img/skills/luau.svg" alt="LUA">
+                        <span class="tooltip">LUAU</span>
+                    </div>
+                    <div class="skills-item">
+                        <img src="img/skills/Roblox_Studio_2022_icon.svg" alt="ROBLOX STUDIO">
+                        <span class="tooltip">ROBLOX STUDIO</span>
+                    </div>
+                </div>
             </div>
-            <div>
-                <img src="img/skills/css3-original.svg" alt="CSS">
-                <span class="tooltip">CSS</span>
-            </div>
-            <div>
-                <img src="img/skills/javascript-original.svg" alt="JAVASCRIPT">
-                <span class="tooltip">JAVASCRIPT</span>
-            </div>
-            <div>
-                <img src="img/skills/php-original.svg" alt="PHP">
-                <span class="tooltip">PHP</span>
-            </div>
-            <div>
-                <img src="img/skills/mysql-original.svg" alt="MYSQL">
-                <span class="tooltip">MYSQL</span>
-            </div>
-            <div>
-                <img src="img/skills/csharp-original.svg" alt="C#">
-                <span class="tooltip">C#</span>
-            </div>
-            <div>
-                <img src="img/skills/lua-original.svg" alt="LUA">
-                <span class="tooltip">LUA</span>
-            </div>
-            <div>
-                <img src="img/skills/Roblox_Studio_2022_icon.svg" alt="ROBLOX STUDIO">
-                <span class="tooltip">ROBLOX STUDIO</span>
-            </div>
+            <button class="carousel-button" id="nextButton">&gt;</button>
         </section>
 
         <h1>My Work</h1>
@@ -231,34 +249,10 @@
             </a>
         </section>
     </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', initCarousel);
+    </script>
 </body>
 
 </html>
-
-<!--
-
-<div class="card between">
-    <div style="width: 100%;">
-        <img class="img-preview" src="Transparent.png" alt="">
-
-        <div class="card-description">
-            <h2>Project Name</h2>
-            <br>
-            <p>Description</p>
-        </div>
-    </div>
-
-    <div class="buttons center">
-        <a href="" target="_blank" rel="noopener noreferrer" class="center">
-            Link 1
-            <img src="img/LinkArrow.png" alt="" target="_blank" rel="noopener noreferrer" class="arrow">
-        </a>
-
-        <a href="" class="center">
-            Link 2
-            <img src="img/LinkArrow.png" alt="" target="_blank" rel="noopener noreferrer" class="arrow">
-        </a>
-    </div>
-</div>
-
--->

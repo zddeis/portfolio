@@ -2,11 +2,13 @@ nav {
     position: fixed;
     display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 1rem;
 
     background-color: hsla(0, 0%, 10%, 0.5);
     backdrop-filter: blur(5px);
 
-    padding: 0.75rem 2rem;
+    padding: 0.75rem 0.5rem;
     border-radius: 0.5rem;
     border: 1px solid hsla(0, 0%, 20%);
 
@@ -16,18 +18,31 @@ nav {
     margin-left: 50%;
 
     z-index: 100;
+
+    width: fit-content;
+    min-width: 300px;
 }
 
 nav a {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    padding: 0.5rem;
+    position: relative;
 }
 
-nav a:hover {
-    padding: 0.5rem 1rem;
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: hsl(0, 0%, 100%);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
 }
 
-nav:has(a:hover) {
-    padding: 0.75rem 1.5rem;
+nav a:hover::after {
+    width: 80%;
 }
