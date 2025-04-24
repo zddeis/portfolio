@@ -1,0 +1,111 @@
+.about {
+    margin-top: 50px;
+
+    background-image: url("../img/backgrounds/about1.png");
+
+    background-color: hsl(0, 0%, 10%, 75%);
+    background-blend-mode: darken;
+
+    width: 100%;
+    box-sizing: border-box;
+    height: auto;
+
+    border-radius: 1rem;
+    border: 1px solid hsla(0, 0%, 20%);
+
+    padding: 2rem;
+
+    margin-bottom: 100px;
+}
+
+.photo {
+    background-color: hsl(0, 0%, 20%);
+
+    max-width: 250px;
+    width: 100%;
+    aspect-ratio: 1;
+    
+    filter: drop-shadow(0px 0px 0.5rem hsl(0, 0%, 0%, 100%)) opacity(75%);
+
+    border-radius: 50%;
+}
+
+.photo:hover {
+    transform: scale(1.05);
+}
+
+.description {
+    width: 100%;
+    padding: 2rem;
+    
+    filter: drop-shadow(0px 0px 0.5rem hsl(0, 0%, 0%, 100%));
+
+    width: 100%;
+}
+
+.description ul {
+    margin-left: 22px;
+}
+
+.description ul li {
+    font-size: 1rem;
+    
+    color: hsl(0, 0%, 75%);
+    padding: 0.25rem;
+}
+
+
+.description h2 {
+    font-size: 1.5rem;
+    color: hsl(0, 0%, 90%);
+}
+
+.description .role {
+    font-size: 1rem;
+    color: hsl(0, 0%, 70%);
+}
+
+.description .highlight {
+    color: hsl(0, 0%, 90%);
+}
+
+.description p {
+    font-size: 1.125rem;
+    color: hsl(0, 0%, 80%);
+}
+
+.location {
+    color: hsl(0, 0%, 70%);
+
+    font-size: 1rem;
+    font-weight: lighter;
+
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+}
+
+.location:hover {
+    text-decoration-color: hsl(0, 0%, 70%);
+}
+
+.location img {
+    height: 1rem;
+    padding-left: 0.5rem;
+    opacity: 0.665;
+}
+
+@media (max-aspect-ratio: 1.375) {
+    .about {
+        flex-direction: column;
+    }
+
+    .title {
+        flex-direction: column;
+    }
+
+    h1 {
+        text-align: center;
+        width: 100%;
+    }
+}
