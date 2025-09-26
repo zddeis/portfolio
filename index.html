@@ -4,64 +4,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="img/Portrait.png" type="image/x-icon">
     <title>Portfolio</title>
 
-    <link rel="shortcut icon" href="img/Portrait50.png" type="image/x-icon">
-
-    <link rel="stylesheet" href="css/all.css">
-
-    <link rel="stylesheet" href="css/body.css">
-    <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="css/main.css">
-
-    <link rel="stylesheet" href="css/about.css">
-    <link rel="stylesheet" href="css/skills.css">
-    <link rel="stylesheet" href="css/work.css">
-    <link rel="stylesheet" href="css/contact.css">
-
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="js/GetYears.js"></script>
     <script src="js/Carousel.js"></script>
 </head>
 
-<body>
+<body class="bg-[#0000000] text-white flex flex-col justify-center" style="font-family: Arial, Helvetica, sans-serif;">
 
-    <video autoplay muted loop class="shader">
-        <source src="background.webm" type="video/webm">
-    </video>
+    <div class="fixed top-4 left-1/2 -translate-x-1/2 z-10">
+        <nav class="py-3 px-6 rounded-xl flex justify-center gap-4 bg-black/25 backdrop-blur-sm ring-1 ring-white/10">
+            <a class="relative text-white/80 hover:text-white transition duration-200
+            after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-zinc-50 
+            after:w-0 hover:after:w-full after:transition-all after:duration-200 scale-100 hover:scale-105"
+                href="">About Me</a>
+            <a class="relative text-white/80 hover:text-white transition duration-200
+            after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-zinc-50 
+            after:w-0 hover:after:w-full after:transition-all after:duration-200 scale-100 hover:scale-105"
+                href="#work">My Work</a>
+            <a class="relative text-white/80 hover:text-white transition duration-200
+            after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-zinc-50 
+            after:w-0 hover:after:w-full after:transition-all after:duration-200 scale-100 hover:scale-105"
+                href="#contact">Contact</a>
+        </nav>
+    </div>
 
-    <nav>
-        <a href="">About Me</a>
-        <a href="#work">My Work</a>
-        <a href="#contact">Contact</a>
-    </nav>
+    <main class="flex flex-col gap-8 w-full max-w-[950px] my-24 mx-auto px-8">
 
-    <main>
+        <section id="about"
+            class="flex lg:flex-row flex-col items-center p-8 pr-16 rounded-[64px] gap-8 bg-black/50 backdrop-blur-xl ring-1 ring-white/10">
+            <img src="img/Portrait.png" alt="" id="photo"
+                class="h-64 w-64 rounded-full ring-1 ring-white/10 transition duration-200 scale-100 hover:scale-110">
 
-        <section class="about center" id="about">
+            <div class="h-full w-full flex flex-col justify-between gap-20">
 
-            <img src="img/Portrait.png" alt="" class="photo" id="photo">
-
-            <div class="description">
-
-                <div class="title between">
+                <div class="flex justify-between">
                     <div>
-                        <h2>David Gouveia</h2>
-                        <p class="role">Programmer</p>
+                        <p class="text-md text-white/100">David Gouveia</p>
+                        <p class="text-sm text-white/60">Programmer</p>
                     </div>
 
-                    <a href="https://g.co/kgs/EAiar1h" target="_blank" class="location center">
+                    <a href="https://g.co/kgs/EAiar1h" target="_blank"
+                        class="flex gap-2 items-center opacity-60 hover:opacity-100 transition duration-200">
                         Coimbra, Portugal
-                        <img src="img/Pin.png" alt="Location">
+                        <img src="img/Pin.png" alt="Location" class="w-4 h-4">
                     </a>
                 </div>
 
-                <br><br>
+                <div class="flex justify-between items-end">
+                    <ul>
+                        <li class="list-[circle] list-inside text-white/70 text-sm"><span id="age"
+                                class="font-bold"></span>
+                            Years old</li>
+                        <li class="list-[circle] list-inside text-white/70 text-sm"><span><span id="experience"
+                                    class="font-bold"></span> Years</span> of Experience</li>
+                    </ul>
 
-                <ul>
-                    <li><span class="highlight"><span id="experience"></span> Years</span> of Experience</li>
-                    <li><span id="age"></span> Years old</li>
-                    <li>I'm driven to continuous learn and contribute in meaningful projects.</li>
-                </ul>
+                    <li class="flex gap-2">
+                        <a href="https://devforum.roblox.com/u/zddeisrblx/summary"><img
+                                src="img/skills/Roblox_Studio_2022_icon.svg" class="w-4 h-4"
+                                style="filter: brightness(0%) invert(100%);" alt="Devforum Page"></a>
+                        <a href="https://www.github.com/zddeis"><img src="img/skills/github-original.svg"
+                                class="w-4 h-4" style="filter: brightness(0%) invert(100%);" alt="GitHub Page"></a>
+                    </li>
+                </div>
 
                 <script>
                     document.getElementById("age").textContent = GetYears("20070916");
@@ -70,181 +79,249 @@
             </div>
         </section>
 
-        <h1>Skills</h1>
+        <h1 class="text-3xl font-bold mx-auto mt-12">Skills</h1>
 
-        <section class="skills" id="skills">
-            <button class="carousel-button" id="prevButton">&lt;</button>
-            <div class="skills-container">
-                <div class="skills-wrapper">
-                    <div class="skills-item">
-                        <img src="img/skills/html5-original.svg" alt="HTML">
-                        <span class="tooltip">HTML</span>
-                    </div>
-                    <div class="skills-item">
-                        <img src="img/skills/css3-original.svg" alt="CSS">
-                        <span class="tooltip">CSS</span>
-                    </div>
-                    <div class="skills-item">
-                        <img src="img/skills/javascript-original.svg" alt="JAVASCRIPT">
-                        <span class="tooltip">JAVASCRIPT</span>
-                    </div>
-                    <div class="skills-item">
-                        <img src="img/skills/php-original.svg" alt="PHP">
-                        <span class="tooltip">PHP</span>
-                    </div>
-                    <div class="skills-item">
-                        <img src="img/skills/mysql-original.svg" alt="MYSQL">
-                        <span class="tooltip">MYSQL</span>
-                    </div>
-                    <div class="skills-item">
-                        <img src="img/skills/Laravel.svg" alt="MYSQL">
-                        <span class="tooltip">LARAVEL</span>
-                    </div>
-                    <div class="skills-item">
-                        <img src="img/skills/Livewire.svg" alt="MYSQL">
-                        <span class="tooltip">LIVEWIRE</span>
-                    </div>
-                    <div class="skills-item">
-                        <img src="img/skills/csharp-original.svg" alt="C#">
-                        <span class="tooltip">C#</span>
-                    </div>
-                    <div class="skills-item">
-                        <img src="img/skills/lua-original.svg" alt="LUA">
-                        <span class="tooltip">LUA</span>
-                    </div>
-                    <div class="skills-item">
-                        <img src="img/skills/luau.svg" alt="LUA">
-                        <span class="tooltip">LUAU</span>
-                    </div>
-                    <div class="skills-item">
-                        <img src="img/skills/Roblox_Studio_2022_icon.svg" alt="ROBLOX STUDIO">
-                        <span class="tooltip">ROBLOX STUDIO</span>
-                    </div>
+        <section id="skills" class="w-full flex gap-4 lg:flex-row flex-col justify-center">
+
+            <div class="flex gap-4 justify-center">
+                <div class="relative group inline-block">
+                    <img class="w-16 h-16" src="img/skills/lua-original.svg" alt="ROBLOX STUDIO">
+
+                    <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 
+                    px-2 py-1 text-sm text-white whitespace-nowrap bg-black/50 backdrop-blur-xl ring-1 ring-white/10 rounded 
+                    opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                        Lua
+                    </span>
+                </div>
+
+                <div class="relative group inline-block">
+                    <img class="w-16 h-16" src="img/skills/luau.svg" alt="ROBLOX STUDIO">
+
+                    <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 
+                    px-2 py-1 text-sm text-white whitespace-nowrap bg-black/50 backdrop-blur-xl ring-1 ring-white/10 rounded 
+                    opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                        Roblox Studio - LUAU
+                    </span>
                 </div>
             </div>
-            <button class="carousel-button" id="nextButton">&gt;</button>
+
+            <!-- Separator -->
+            <div class="hidden lg:block w-0.5 rounded-full bg-white/10"></div>
+            <div class="block lg:hidden w-full h-0.5 rounded-full bg-white/10"></div>
+
+            <div class="flex gap-4 justify-center">
+                <div class="relative group inline-block">
+                    <img class="w-16 h-16" src="img/skills/c-original.svg" alt="ROBLOX STUDIO">
+
+                    <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 
+                    px-2 py-1 text-sm text-white whitespace-nowrap bg-black/50 backdrop-blur-xl ring-1 ring-white/10 rounded 
+                    opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                        C
+                    </span>
+                </div>
+
+                <div class="relative group inline-block">
+                    <img class="w-16 h-16" src="img/skills/csharp-original.svg" alt="ROBLOX STUDIO">
+
+                    <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 
+                    px-2 py-1 text-sm text-white whitespace-nowrap bg-black/50 backdrop-blur-xl ring-1 ring-white/10 rounded 
+                    opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                        C#
+                    </span>
+                </div>
+            </div>
+
+            <!-- Separator -->
+            <div class="hidden lg:block w-0.5 rounded-full bg-white/10"></div>
+            <div class="block lg:hidden w-full h-0.5 rounded-full bg-white/10"></div>
+
+            <div class="flex gap-4 justify-center">
+                <div class="relative group inline-block">
+                    <img class="w-16 h-16" src="img/skills/Laravel.svg" alt="ROBLOX STUDIO">
+
+                    <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 
+                    px-2 py-1 text-sm text-white whitespace-nowrap bg-black/50 backdrop-blur-xl ring-1 ring-white/10 rounded 
+                    opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                        Laravel
+                    </span>
+                </div>
+
+                <div class="relative group inline-block">
+                    <img class="w-16 h-16" src="img/skills/php-original.svg" alt="ROBLOX STUDIO">
+
+                    <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 
+                    px-2 py-1 text-sm text-white whitespace-nowrap bg-black/50 backdrop-blur-xl ring-1 ring-white/10 rounded 
+                    opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                        PHP
+                    </span>
+                </div>
+            </div>
+
+
+            <!-- Separator -->
+            <div class="hidden lg:block w-0.5 rounded-full bg-white/10"></div>
+            <div class="block lg:hidden w-full h-0.5 rounded-full bg-white/10"></div>
+
+            <div class="flex gap-4 justify-center">
+                <div class="relative group inline-block">
+                    <img class="w-16 h-16" src="img/skills/html5-original.svg" alt="ROBLOX STUDIO">
+
+                    <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 
+                    px-2 py-1 text-sm text-white whitespace-nowrap bg-black/50 backdrop-blur-xl ring-1 ring-white/10 rounded 
+                    opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                        HTML
+                    </span>
+                </div>
+
+                <div class="relative group inline-block">
+                    <img class="w-16 h-16" src="img/skills/css3-original.svg" alt="ROBLOX STUDIO">
+
+                    <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 
+                    px-2 py-1 text-sm text-white whitespace-nowrap bg-black/50 backdrop-blur-xl ring-1 ring-white/10 rounded 
+                    opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                        CSS
+                    </span>
+                </div>
+
+
+                <div class="relative group inline-block">
+                    <img class="w-16 h-16" src="img/skills/javascript-original.svg" alt="ROBLOX STUDIO">
+
+                    <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 
+                    px-2 py-1 text-sm text-white whitespace-nowrap bg-black/50 backdrop-blur-xl ring-1 ring-white/10 rounded 
+                    opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                        Javascript
+                    </span>
+                </div>
+            </div>
         </section>
 
-        <h1>My Work</h1>
+        <h1 class="text-3xl font-bold mx-auto mt-12">My Work</h1>
 
-        <section class="work center" id="work">
+        <section id="work" class="flex flex-col gap-4">
 
-            <div class="card between">
-                <div style="width: 100%;">
-                    <img class="img-preview" style="background-image: url('img/work/Portfolio.png')"
-                        src="Transparent.png" alt="">
+            <div class="flex gap-4 lg:flex-row flex-col">
+                <div
+                    class="h-[375px] flex flex-col justify-between gap-4 w-1/2 rounded-4xl bg-black/25 backdrop-blur-sm ring-1 ring-white/10">
+                    <div class="w-full">
+                        <img class="w-full h-32 bg-[url(img/work/Portfolio.png)] bg-cover bg-center rounded-t-4xl"
+                            src="Transparent.png" alt="">
 
-                    <div class="card-description">
-                        <h2>Portfolio</h2>
-                        <br>
-                        <p>HTML, CSS, JAVASCRIPT</p>
+                        <div class="px-4 py-2">
+                            <h2 class="text-xl font-bold">Portfolio</h2>
+                            <br>
+                            <p>HTML, CSS, JAVASCRIPT</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-2 p-4">
+                        <a class="flex gap-2 px-4 py-2 rounded-xl bg-black/25 backdrop-blur-sm ring-1 ring-white/10 items-center"
+                            href="https://github.com/zddeis/portfolio" target="_blank">
+                            Github
+                            <img src="img/LinkArrow.png" class="w-2.5 h-2.5" alt="">
+                        </a>
                     </div>
                 </div>
 
-                <div class="buttons center">
-                    <a href="https://github.com/zddeis/portfolio" target="_blank" rel="noopener noreferrer"
-                        class="center">
-                        Github
-                        <img src="img/LinkArrow.png" alt="" class="arrow">
-                    </a>
+
+                <div
+                    class="h-[375px] flex flex-col justify-between gap-4 w-1/2 rounded-4xl bg-black/25 backdrop-blur-sm ring-1 ring-white/10">
+                    <div class="w-full">
+                        <img class="w-full h-32 bg-[url(img/work/zdsharp.png)] bg-cover bg-center rounded-t-4xl"
+                            src="Transparent.png" alt="">
+
+                        <div class="px-4 py-2">
+                            <h2 class="text-xl font-bold">ZD#</h2>
+                            <br>
+                            <p>My own programming language based on C#</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-2 p-4">
+                        <a class="flex gap-2 px-4 py-2 rounded-xl bg-black/25 backdrop-blur-sm ring-1 ring-white/10 items-center"
+                            href="https://github.com/zddeis/zdSharp" target="_blank">
+                            Github
+                            <img src="img/LinkArrow.png" class="w-2.5 h-2.5" alt="">
+                        </a>
+                    </div>
                 </div>
             </div>
 
+            <div class="flex gap-4 lg:flex-row flex-col">
+                <div
+                    class="h-[375px] flex flex-col justify-between gap-4 w-1/2 rounded-4xl bg-black/25 backdrop-blur-sm ring-1 ring-white/10">
+                    <div class="w-full">
+                        <img class="w-full h-[150px] bg-[url(img/work/BeautifulRoads.png)] bg-size-[100%] bg-center rounded-t-4xl"
+                            src="Transparent.png" alt="">
 
-            <div class="card between">
-                <div style="width: 100%;">
-                    <img class="img-preview" style="background-image: url('img/work/zdsharp.png')" src="Transparent.png"
-                        alt="">
+                        <div class="px-4 py-2">
+                            <h2 class="text-xl font-bold">Beautiful Roads Sidewalks</h2>
+                            <br>
+                            <p>Top 160 Roblox Studio Plugin</p>
+                        </div>
+                    </div>
 
-                    <div class="card-description">
-                        <h2>ZD#</h2>
-                        <br>
-                        <p>My own programming language based on C#</p>
+                    <div class="flex gap-2 p-4">
+                        <a class="flex gap-2 px-4 py-2 rounded-xl bg-black/25 backdrop-blur-sm ring-1 ring-white/10 items-center"
+                            href="https://create.roblox.com/store/asset/14225874173/Beautiful-Roads-Sidewalks"
+                            target="_blank">
+                            Store Page
+                            <img src="img/LinkArrow.png" class="w-2.5 h-2.5" alt="">
+                        </a>
+
+                        <a class="flex gap-2 px-4 py-2 rounded-xl bg-black/25 backdrop-blur-sm ring-1 ring-white/10 items-center"
+                            href="https://www.youtube.com/watch?v=7lNxp3uR7Lg" target="_blank">
+                            Demonstration
+                            <img src="img/LinkArrow.png" class="w-2.5 h-2.5" alt="">
+                        </a>
                     </div>
                 </div>
 
-                <div class="buttons center">
-                    <a href="https://github.com/zddeis/zdSharp" target="_blank" rel="noopener noreferrer"
-                        class="center">
-                        Github
-                        <img src="img/LinkArrow.png" alt="" class="arrow">
-                    </a>
-                </div>
-            </div>
+                <div
+                    class="h-[375px] flex flex-col justify-between gap-4 w-1/2 rounded-4xl bg-black/25 backdrop-blur-sm ring-1 ring-white/10">
+                    <div class="w-full">
+                        <img class="w-full h-32 bg-[url(img/work/RoadBuilder.png)] bg-cover bg-center rounded-t-4xl"
+                            src="Transparent.png" alt="">
 
-            <div class="card between">
-                <div style="width: 100%;">
-                    <img class="img-preview" style="background-image: url('img/work/BeautifulRoads.png');"
-                        src="Transparent.png" alt="">
-
-                    <div class="card-description">
-                        <h2>Beautiful Roads Sidewalks</h2>
-                        <br>
-                        <p>Top 160 Roblox Studio Plugin</p>
+                        <div class="px-4 py-2">
+                            <h2 class="text-xl font-bold">RoadBuilder</h2>
+                            <br>
+                            <p>Top 1 Road Plugin - Roblox Studio Plugin</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="buttons center">
+                    <div class="flex gap-2 p-4">
+                        <a class="flex gap-2 px-4 py-2 rounded-xl bg-black/25 backdrop-blur-sm ring-1 ring-white/10 items-center"
+                            href="https://create.roblox.com/store/asset/14674744762/RoadBuilder-v070" target="_blank">
+                            Store Page
+                            <img src="img/LinkArrow.png" class="w-2.5 h-2.5" alt="">
+                        </a>
 
-                    <a href="https://create.roblox.com/store/asset/14225874173/" target="_blank"
-                        rel="noopener noreferrer" class="center">
-                        Store Page
-                        <img src="img/LinkArrow.png" alt="" target="_blank" rel="noopener noreferrer" class="arrow">
-                    </a>
-
-                    <a href="https://youtu.be/7lNxp3uR7Lg" class="center">
-                        Demonstration
-                        <img src="img/LinkArrow.png" alt="" target="_blank" rel="noopener noreferrer" class="arrow">
-                    </a>
-                </div>
-            </div>
-
-            <div class="card between">
-                <div style="width: 100%;">
-                    <img class="img-preview" style="background-image: url('img/work/RoadBuilder.png');"
-                        src="Transparent.png" alt="">
-
-                    <div class="card-description">
-                        <h2>RoadBuilder</h2>
-                        <br>
-                        <p>Top 1 Road Plugin - Roblox Studio Plugin</p>
+                        <a class="flex gap-2 px-4 py-2 rounded-xl bg-black/25 backdrop-blur-sm ring-1 ring-white/10 items-center"
+                            href="https://zddeis.github.io/RoadBuilder/" target="_blank">
+                            Website
+                            <img src="img/LinkArrow.png" class="w-2.5 h-2.5" alt="">
+                        </a>
                     </div>
-                </div>
-
-                <div class="buttons center">
-
-                    <a href="https://create.roblox.com/store/asset/14674744762/" target="_blank"
-                        rel="noopener noreferrer" class="center">
-                        Store Page
-                        <img src="img/LinkArrow.png" alt="" target="_blank" rel="noopener noreferrer" class="arrow">
-                    </a>
-                    
-                    <a href="https://zddeis.github.io/RoadBuilder" target="_blank"
-                        rel="noopener noreferrer" class="center">
-                        Website
-                        <img src="img/LinkArrow.png" alt="" target="_blank" rel="noopener noreferrer" class="arrow">
-                    </a>
                 </div>
             </div>
 
         </section>
 
-        <h1>Contact</h1>
+        <h1 class="text-3xl font-bold mx-auto mt-12">Contact</h1>
 
-        <section class="contact center" id="contact">
+        <section id="contact" class="flex lg:flex-row flex-col gap-8 justify-center">
 
-            <a class="a-discord center" href="https://discordapp.com/users/508625557437677580" target="_blank"
-                rel="noopener noreferrer">
+            <a href="https://discordapp.com/users/508625557437677580" target="_blank"
+                class="text-2xl flex gap-4 items-center">
 
-                <img src="img/discord.png" alt="discord" class="discord">
+                <img src="img/discord.png" alt="discord" class="w-12 h-12">
                 zddeis
             </a>
 
-            <div style="width: 5rem;"></div>
+            <a href="mailto:david.fcg07@gmail.com" target="_blank" class="text-2xl flex gap-4 items-center">
 
-            <a class="a-email center" href="mailto:david.fcg07@gmail.com" target="_blank" rel="noopener noreferrer">
-
-                <img src="img/email.png" alt="email" class="email">
+                <img src="img/email.png" alt="email" class="w-12 h-12">
                 david.fcg07@gmail.com
             </a>
         </section>
