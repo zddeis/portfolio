@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-1: hsl(0, 0%, 5%);
+
+  --color-bg-2: hsl(0, 0%, 10%);
+  --color-bg-2-hover: hsl(0, 0%, 12.5%);
+  
+  --color-bg-3: hsl(0, 0%, 15%);
+  
+  --color-text: hsl(0, 0%, 100%);
+  --color-text-secondary: hsl(0, 0%, 55%);
+  --color-text-muted: hsl(0, 0%, 45%);
+  --color-border: hsl(0, 0%, 20%);
+  --color-card: hsl(0, 0%, 10%);
+  --font-sans: system-ui, -apple-system, sans-serif;
+}
+
+[data-theme="light"] {
+  --color-bg-1: hsl(0, 0%, 95%);
+  
+  --color-bg-2: hsl(0, 0%, 97.5%);
+  --color-bg-2-hover: hsl(0, 0%, 95%);
+  
+  --color-bg-3: hsl(0, 0%, 100%);
+  
+  --color-text: hsl(0, 0%, 0%);
+  --color-text-secondary: hsl(0, 0%, 50%);
+  --color-text-muted: hsl(0, 0%, 60%);
+  --color-border: hsl(0, 0%, 95%);
+  --color-card: hsl(0, 0%, 100%);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg-1);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="light"] .glass {
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
