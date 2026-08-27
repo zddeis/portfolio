@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { ChevronLeft, ChevronRight, Maximize2 } from 'lucide-react'
+import Lightbox from './Lightbox'
 
 type CarouselProps = {
   images: string[]
@@ -8,6 +9,7 @@ type CarouselProps = {
 
 export default function Carousel({ images, alt }: CarouselProps) {
   const [index, setIndex] = useState(0)
+  const [lightboxOpen, setLightboxOpen] = useState(false)
   const count = images.length
 
   const prev = () => setIndex((i) => (i - 1 + count) % count)
@@ -17,11 +19,25 @@ export default function Carousel({ images, alt }: CarouselProps) {
 
   return (
     <div className="relative h-52 bg-[var(--color-bg-2)] rounded-xl overflow-hidden group select-none">
-      <img
-        src={images[index]}
-        alt={alt ? `${alt} ${index + 1}` : undefined}
-        className="w-full h-full object-cover"
-      />
+      <button
+        onClick={() => setLightboxOpen(true)}
+        aria-label="Open image"
+        className="block w-full h-full cursor-zoom-in"
+      >
+        <img
+          src={images[index]}
+          alt={alt ? `${alt} ${index + 1}` : undefined}
+          className="w-full h-full object-cover pointer-events-none"
+        />
+      </button>
+
+      <button
+        onClick={() => setLightboxOpen(true)}
+        aria-label="Open fullscreen"
+        className="absolute top-2 right-2 p-1.5 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors cursor-pointer opacity-0 group-hover:opacity-100"
+      >
+        <Maximize2 size={16} />
+      </button>
 
       {count > 1 && (
         <>
@@ -51,6 +67,15 @@ export default function Carousel({ images, alt }: CarouselProps) {
             ))}
           </div>
         </>
+      )}
+
+      {lightboxOpen && (
+        <Lightbox
+          images={images}
+          startIndex={index}
+          alt={alt}
+          onClose={() => setLightboxOpen(false)}
+        />
       )}
     </div>
   )

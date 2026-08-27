@@ -76,6 +76,30 @@ export const projects: Project[] = [
       'Distributed as an interpreter (zds.exe) with a separate runtime DLL and runtimeconfig.'
     ],
   },
+  {
+    name: 'RoadBuilder',
+    tools: ['Lua'],
+    timeline: 'Apr 2025 - Now',
+    description: 'Highly customizable Roblox Studio road-building plugin that lets you create roads using node-based lanes, modular features, and custom textures.',
+    longDescription: `
+      Build detailed and customizable road networks directly in Roblox Studio with an intuitive node-based workflow. Create lanes by placing and connecting nodes, then let the plugin handle road rendering for you.
+
+      Customize your roads with a wide range of modular features, including sidewalks, guardrails, shoulders, and more. You can also use custom textures and colors to match the style of your game and create unique road designs.
+
+      The plugin is designed to be easy for beginners to pick up while still offering plenty of advanced customization for experienced developers. Whether you need a simple road for a small map or a highly detailed and configurable road network, the system gives you the tools to build it your way.
+    `,
+    images: ['/portfolio/assets/project_images/RoadBuilder.png', '/portfolio/assets/project_images/RoadBuilder/image1.png', '/portfolio/assets/project_images/RoadBuilder/image2.png', '/portfolio/assets/project_images/RoadBuilder/image3.png', '/portfolio/assets/project_images/RoadBuilder/image4.png'],
+    links: {
+      docs: null,
+      source: null,
+      website: 'https://zddeis.github.io/RoadBuilder/',
+    },
+    highlights: [
+      'Beginner-friendly syntax designed for readability and quick learning.',
+      'VS Code extension with syntax highlighting',
+      'Distributed as an interpreter (zds.exe) with a separate runtime DLL and runtimeconfig.'
+    ],
+  },
   // {
   //   name: 'Project Name',
   //   tools: ['Tool_1', 'Tool_2', 'Tool_3'],

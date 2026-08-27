@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { ExternalLink, X, BookOpen } from 'lucide-react'
+import { ExternalLink, X, BookOpen, Globe } from 'lucide-react'
 import { Github } from '../icons'
 import type { Project } from '../data'
 import Carousel from './Carousel'
@@ -112,6 +112,19 @@ export default function Modal({ project, tools, onClose }: ModalProps) {
               >
                 <Github />
                 View Source
+                <ExternalLink size={15} />
+              </a>
+            ) : ''}
+
+            {project.links && project.links['website'] ? (
+              <a
+                href={project.links['website']}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full inline-flex items-center justify-center gap-2 text-sm font-medium text-[var(--color-text)] bg-[var(--color-bg-2)] hover:bg-[var(--color-bg-3)] transition-colors px-4 py-3 border border-[var(--color-border)] rounded-xl"
+              >
+                <Globe />
+                View Website
                 <ExternalLink size={15} />
               </a>
             ) : ''}
