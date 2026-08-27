@@ -1,1 +1,1 @@
-{"root":["./src/App.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/Modal.tsx","./src/components/Toaster.tsx","./src/icons/github.tsx","./src/icons/index.tsx"],"version":"5.7.3"}
+{"root":["./src/App.tsx","./src/data.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/Carousel.tsx","./src/components/Modal.tsx","./src/components/Toaster.tsx","./src/icons/github.tsx","./src/icons/index.tsx"],"version":"5.7.3"}

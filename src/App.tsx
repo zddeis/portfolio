@@ -1,68 +1,10 @@
 import { useState, useEffect, useRef } from 'react'
-import { Mail, FileText, Sun, Moon, ExternalLink, Copy } from 'lucide-react'
+import { Sun, Moon, ExternalLink, Copy, Globe, BookOpen } from 'lucide-react'
 import { Github } from './icons'
 import Toaster, { ToasterHandle } from './components/Toaster'
 import Modal from './components/Modal'
+import { tools, projects, contact, about, getAge, Project } from './data'
 import './App.css'
-
-const tools: Record<string, string> = {
-  "Lua": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/lua/lua-original.svg",
-  "C#": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg",
-  "TailwindCSS": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
-}
-
-const projects = [
-  {
-    name: 'Project Name',
-    tools: ['Lua', 'TailwindCSS', 'C#'],
-    timeline: 'Date - Date',
-    description: 'Description',
-    longDescription: 'A longer, more detailed description of the project goes here. You can cover what it does, the problem it solves, the architecture, and anything else worth highlighting.',
-    image: null,
-    link: 'https://github.com/zddeis',
-    features: ['Feature 1', 'Feature 2', 'Feature 3'],
-  },
-  {
-    name: 'Project Name',
-    tools: ['C#'],
-    timeline: 'Date - Date',
-    description: 'Description',
-    longDescription: 'A longer, more detailed description of the project goes here. You can cover what it does, the problem it solves, the architecture, and anything else worth highlighting.',
-    image: null,
-    link: 'https://github.com/zddeis',
-    features: ['Feature 1', 'Feature 2', 'Feature 3'],
-  },
-  {
-    name: 'Project Name',
-    tools: ['Lua', 'C#'],
-    timeline: 'Date - Date',
-    description: 'Description',
-    longDescription: 'A longer, more detailed description of the project goes here. You can cover what it does, the problem it solves, the architecture, and anything else worth highlighting.',
-    image: null,
-    link: 'https://github.com/zddeis',
-    features: ['Feature 1', 'Feature 2', 'Feature 3'],
-  },
-]
-
-const contact = [
-  {
-    name: 'Email',
-    icon: <Mail size={20} />,
-    href: 'mailto:david.fcg07@gmail.com',
-    tooltip: 'david.fcg07@gmail.com',
-  },
-  {
-    name: 'GitHub',
-    icon: <Github />,
-    href: 'https://github.com/zddeis',
-    tooltip: 'github.com/zddeis',
-  },
-  {
-    name: 'Resume',
-    icon: <FileText size={20} />,
-    href: '/portfolio/resume.pdf',
-  },
-]
 
 export default function App() {
   const [theme, setTheme] = useState<'light' | 'dark'>('dark')
@@ -93,6 +35,54 @@ export default function App() {
 
   const project = selectedProject !== null ? projects[selectedProject] : null
 
+  const ProjectCard = ({ project: p, index, onSelect }: { project: Project; index: number; onSelect: (i: number) => void }) => (
+    <div key={index} onClick={() => onSelect(index)} className="cursor-pointer bg-[var(--color-bg-2)] hover:bg-[var(--color-bg-2-hover)] transition-colors border border-[var(--color-border)] rounded-xl overflow-hidden shadow-sm">
+      <div className="h-44 bg-[var(--color-bg-2)] flex items-center justify-center text-[var(--color-text-muted)] text-sm">
+        {p.images && p.images[0] ? (
+          <img src={p.images[0]} alt={p.name} className="w-full h-full object-cover" />
+        ) : (
+          'Project Image'
+        )}
+      </div>
+      <div className="flex flex-col p-5 border-t border-[var(--color-border)]" style={{ height: 'calc(100% - calc(var(--spacing) * 44))' }}>
+        <div className='w-full flex justify-between items-end'>
+          <h3 className="text-lg font-semibold text-[var(--color-text)] mb-2">{p.name}</h3>
+          <p className="text-[var(--color-text-muted)] text-xs mb-3">{p.timeline}</p>
+        </div>
+
+        <div className='flex-1 w-full flex flex-col justify-between'>
+          <p className="text-[var(--color-text-muted)] text-sm leading-relaxed mb-4">{p.description}</p>
+          <div>
+            <p className="text-[var(--color-text-secondary)] text-xs mb-2 text-nowrap truncate">{p.tools.join(', ')}</p>
+            <div className='flex gap-4'>
+              {p.links && p.links['source'] ? (
+                <a href={p.links['source']} target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 inline-flex items-center gap-1.5 text-sm font-medium text-[var(--color-text)] py-1">
+                  <Github />
+                  Source
+                  <ExternalLink size={14} />
+                </a>
+              ) : ''}
+              {p.links && p.links['website'] ? (
+                <a href={p.links['website']} target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 inline-flex items-center gap-1.5 text-sm font-medium text-[var(--color-text)] py-1">
+                  <Globe />
+                  Website
+                  <ExternalLink size={14} />
+                </a>
+              ) : ''}
+              {p.links && p.links['docs'] ? (
+                <a href={p.links['docs']} target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 inline-flex items-center gap-1.5 text-sm font-medium text-[var(--color-text)] py-1">
+                  <BookOpen />
+                  Docs
+                  <ExternalLink size={14} />
+                </a>
+              ) : ''}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+
   return (
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-center h-20 select-none">
@@ -101,15 +91,15 @@ export default function App() {
             <div className="py-2.5 flex items-center gap-3">
               <img src='https://avatars.githubusercontent.com/u/125417427?v=4' className="w-8 h-8 rounded-full bg-transparent" />
   
-              <span className="text-[var(--color-text)] font-semibold text-base overflow-hidden">David</span>
+              <span className="text-[var(--color-text)] hidden md:block font-semibold text-base overflow-hidden">{about.name.split(' ')[0]}</span>
             </div>
           </div>
 
-          <div className="glass rounded-xl px-6 py-2.5 flex items-center gap-8">
+          { true ? (<div className="glass rounded-xl px-6 py-2.5 flex items-center gap-8">
             <a href="#about" className="text-sm font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors">About</a>
             <a href="#work" className="text-sm font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors">Work</a>
             <a href="#contact" className="text-sm font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors">Contact</a>
-          </div>
+          </div>) : ''}
 
           <div className='flex-1 flex justify-end'>
             <div className="py-2.5 flex items-center">
@@ -121,41 +111,27 @@ export default function App() {
         </div>
       </nav>
 
-      <main className='flex flex-col select-none gap-24 my-48'>
+      <main className='flex flex-col select-none gap-24 my-24'>
 
-        <section id="about" className="h-xl flex items-center max-w-5xl mx-auto">
-          <div className="items-center gap-12 max-md:flex-col max-w-md max-md:text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-[var(--color-text)] mb-1">David Gouveia</h1>
-            <p className="text-lg text-[var(--color-text-secondary)] mb-4">Software Developer</p>
+        <section id="about" className="max-w-5xl mx-auto flex h-xl">
+          <div className='flex gap-8 items-center flex-1 max-md:flex-col max-md:justify-center'>
+            <img src="https://avatars.githubusercontent.com/u/125417427?v=4" alt="" className='h-full max-h-40 w-auto aspect-square rounded-full' />
+            <div className="items-center gap-12 max-md:flex-col max-md:text-center max-w-md">
+              <h1 className="text-4xl font-bold tracking-tight text-[var(--color-text)] mb-1">{about.name}</h1>
+              <p className="text-lg text-[var(--color-text-secondary)] mb-3">{about.role}</p>
+              <p className="text-sm text-[var(--color-text-muted)]">{getAge()} · {about.location}</p>
+            </div>
           </div>
         </section>
   
         <section id="work" className="w-full max-w-5xl mx-auto px-6">
           <h2 className="text-[var(--color-text)] text-2xl font-semibold text-center mb-12 tracking-tight">Work & Projects</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((p, i) => (
-              <div key={i} onClick={() => setSelectedProject(i)} className="cursor-pointer bg-[var(--color-bg-2)] hover:bg-[var(--color-bg-2-hover)] transition-colors border border-[var(--color-border)] rounded-xl overflow-hidden shadow-sm">
-                <div
-                  className="h-44 bg-[var(--color-bg-2)] flex items-center justify-center text-[var(--color-text-muted)] text-sm">
-                  {p.image ? (
-                    <img src={p.image} alt={p.name} className="w-full h-full object-cover" />
-                  ) : (
-                    'Project Image'
-                  )}
-                </div>
-                <div className="p-5 border-t border-[var(--color-border)]">
-                  <h3 className="text-lg font-semibold text-[var(--color-text)] mb-2">{p.name}</h3>
-                  <p className="text-[var(--color-text-secondary)] text-xs mb-2 text-nowrap truncate">{p.tools.join(', ')}</p>
-                  <p className="text-[var(--color-text-muted)] text-xs mb-3">{p.timeline}</p>
-                  <p className="text-[var(--color-text-muted)] text-sm leading-relaxed mb-4">{p.description}</p>
-                  <a href={p.link} target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 inline-flex items-center gap-1.5 text-sm font-medium text-[var(--color-text)] px-3.5 py-1.5">
-                    <Github />
-                    Source
-                    <ExternalLink size={14} />
-                  </a>
-                </div>
+          <div className="flex flex-col gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {projects.map((p, i) => (
+                  <ProjectCard key={i} project={p} index={i} onSelect={setSelectedProject} />
+                ))}
               </div>
-            ))}
           </div>
         </section>
   
