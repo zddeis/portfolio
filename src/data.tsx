@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import { Mail, FileText } from 'lucide-react'
+import { Mail } from 'lucide-react'
 import { Github } from './icons'
 
 export type Links = {
@@ -141,11 +141,11 @@ export const contact: ContactItem[] = [
     href: 'https://github.com/zddeis',
     tooltip: 'github.com/zddeis',
   },
-  {
-    name: 'Resume',
-    icon: <FileText size={20} />,
-    href: '/portfolio/resume.pdf',
-  },
+  // {
+  //   name: 'Resume',
+  //   icon: <FileText size={20} />,
+  //   href: '/portfolio/resume.pdf',
+  // },
 ]
 
 export const about = {
