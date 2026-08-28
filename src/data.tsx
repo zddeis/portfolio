@@ -80,7 +80,7 @@ export const projects: Project[] = [
     name: 'RoadBuilder',
     tools: ['Lua'],
     timeline: 'Apr 2025 - Now',
-    description: 'Highly customizable Roblox Studio road-building plugin that lets you create roads using node-based lanes, modular features, and custom textures.',
+    description: 'Highly customizable Roblox Studio road-building plugin with 1000+ sales that lets you create roads using node-based lanes, modular features, and custom textures.',
     longDescription: `
       Build detailed and customizable road networks directly in Roblox Studio with an intuitive node-based workflow. Create lanes by placing and connecting nodes, then let the plugin handle road rendering for you.
 
@@ -95,9 +95,9 @@ export const projects: Project[] = [
       website: 'https://zddeis.github.io/RoadBuilder/',
     },
     highlights: [
-      'Beginner-friendly syntax designed for readability and quick learning.',
-      'VS Code extension with syntax highlighting',
-      'Distributed as an interpreter (zds.exe) with a separate runtime DLL and runtimeconfig.'
+      'Node-based road building',
+      'Modular road features',
+      'Highly customizable'
     ],
   },
   // {

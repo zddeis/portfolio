@@ -40,7 +40,7 @@ export default function Modal({ project, tools, onClose }: ModalProps) {
         className="relative bg-[var(--color-bg-1)] border border-[var(--color-border)] rounded-2xl shadow-2xl w-full max-w-2xl max-h-[85vh] overflow-y-auto animate-[modalPop_0.25s_ease]"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="bg-[var(--color-bg-1)] sticky top-0 flex items-center justify-between p-5 border-b border-[var(--color-border)] bg-[var(--color-bg)]">
+        <div className="z-50 bg-[var(--color-bg-1)] sticky top-0 flex items-center justify-between p-5 border-b border-[var(--color-border)] bg-[var(--color-bg)]">
           <h3 className="text-xl font-semibold text-[var(--color-text)]">
             {project.name}
             <span className="text-sm font-normal text-[var(--color-text-muted)] ml-4 select-none">{project.timeline}</span>
