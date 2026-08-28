@@ -59,7 +59,7 @@ export const projects: Project[] = [
   {
     name: 'zdSharp',
     tools: ['C#', '.NET'],
-    timeline: 'Jul 2024 - Dec 2025',
+    timeline: 'Dec 2024 - Jul 2025',
     description: 'A beginner-friendly, dynamically typed scripting language implemented in C# with an interpreter, standard library, and VS Code syntax extension.',
     longDescription: `
       ZD# is a compact, easy-to-learn programming language implemented in C# that focuses on readable syntax and rapid prototyping. It ships with an interpreter (zds.exe), runtime library (zds.dll), and a Visual Studio Code extension for syntax highlighting, making it simple to get started writing and running .zds scripts. ZD# supports variables with automatic type inference, functions, arrays and array helpers (map/filter/find), string utilities, math and trigonometry functions, control flow (if/else, while, for), console I/O, and basic runtime utilities like timestamps and constants
