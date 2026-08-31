@@ -108,7 +108,7 @@ export default function Modal({ project, tools, onClose }: ModalProps) {
                 href={project.links['source']}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 text-sm font-medium text-[var(--color-text)] bg-[var(--color-bg-2)] hover:bg-[var(--color-bg-3)] transition-colors px-4 py-3 border border-[var(--color-border)] rounded-xl"
+                className="w-full inline-flex items-center justify-center gap-2 text-sm font-medium text-[var(--color-text)] bg-[var(--color-bg-2)] hover:bg-[var(--color-bg-3)] transition-colors px-4 py-3 shadow-sm border border-[var(--color-border)] rounded-xl"
               >
                 <Github />
                 View Source
@@ -121,7 +121,7 @@ export default function Modal({ project, tools, onClose }: ModalProps) {
                 href={project.links['website']}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 text-sm font-medium text-[var(--color-text)] bg-[var(--color-bg-2)] hover:bg-[var(--color-bg-3)] transition-colors px-4 py-3 border border-[var(--color-border)] rounded-xl"
+                className="w-full inline-flex items-center justify-center gap-2 text-sm font-medium text-[var(--color-text)] bg-[var(--color-bg-2)] hover:bg-[var(--color-bg-3)] transition-colors px-4 py-3 shadow-sm border border-[var(--color-border)] rounded-xl"
               >
                 <Globe />
                 View Website
@@ -134,7 +134,7 @@ export default function Modal({ project, tools, onClose }: ModalProps) {
                 href={project.links['docs']}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 text-sm font-medium text-[var(--color-text)] bg-[var(--color-bg-2)] hover:bg-[var(--color-bg-3)] transition-colors px-4 py-3 border border-[var(--color-border)] rounded-xl"
+                className="w-full inline-flex items-center justify-center gap-2 text-sm font-medium text-[var(--color-text)] bg-[var(--color-bg-2)] hover:bg-[var(--color-bg-3)] transition-colors px-4 py-3 shadow-sm border border-[var(--color-border)] rounded-xl"
               >
                 <BookOpen />
                 View Docs
