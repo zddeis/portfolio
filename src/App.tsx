@@ -95,10 +95,10 @@ export default function App() {
             </div>
           </div>
 
-          { true ? (<div className="glass rounded-xl px-6 py-2.5 flex items-center gap-8">
-            <a href="#about" className="text-sm font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors">About</a>
-            <a href="#work" className="text-sm font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors">Work</a>
-            <a href="#contact" className="text-sm font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors">Contact</a>
+          { true ? (<div className="bg-[var(--color-bg-1)]/25 backdrop-blur-lg rounded-xl px-6 py-2.5 flex items-center gap-8">
+            <a href="#about" className="text-sm font-medium text-[var(--color-text)]/75 hover:text-[var(--color-text)] transition-colors">About</a>
+            <a href="#work" className="text-sm font-medium text-[var(--color-text)]/75 hover:text-[var(--color-text)] transition-colors">Work</a>
+            <a href="#contact" className="text-sm font-medium text-[var(--color-text)]/75 hover:text-[var(--color-text)] transition-colors">Contact</a>
           </div>) : ''}
 
           <div className='flex-1 flex justify-end'>
